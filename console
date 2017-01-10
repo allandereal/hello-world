@@ -1,0 +1,627 @@
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+allan@allan-VirtualBox:~$ udo apt-get install python-pip
+The program 'udo' is currently not installed. You can install it by typing:
+sudo apt install udo
+allan@allan-VirtualBox:~$ sudo apt-get install python-pip
+[sudo] password for allan: 
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+allan@allan-VirtualBox:~$ sudo apt-get install python-pip
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+allan@allan-VirtualBox:~$ cd Downloads
+allan@allan-VirtualBox:~/Downloads$ sudo python get-pip.py
+The directory '/home/allan/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/allan/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting pip
+  Downloading pip-9.0.1-py2.py3-none-any.whl (1.3MB)
+    100% |████████████████████████████████| 1.3MB 15kB/s 
+Collecting setuptools
+  Downloading setuptools-32.3.1-py2.py3-none-any.whl (479kB)
+    100% |████████████████████████████████| 481kB 13kB/s 
+Collecting wheel
+  Downloading wheel-0.29.0-py2.py3-none-any.whl (66kB)
+    100% |████████████████████████████████| 71kB 17kB/s 
+Installing collected packages: pip, setuptools, wheel
+Successfully installed pip-9.0.1 setuptools-32.3.1 wheel-0.29.0
+allan@allan-VirtualBox:~/Downloads$ pip
+
+Usage:   
+  pip <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be used up to 3 times (corresponding to WARNING, ERROR, and
+                              CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort.
+  --trusted-host <hostname>   Mark this host as trusted, even though it does not have valid or any HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file containing the private key and the certificate in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine whether a new version of pip is available for download. Implied
+                              with --no-index.
+allan@allan-VirtualBox:~/Downloads$ pip show -v
+ERROR: Please provide a package name or names.
+Looking up "https://pypi.python.org/pypi/pip/json" in the cache
+No cache entry available
+Starting new HTTPS connection (1): pypi.python.org
+"GET /pypi/pip/json HTTP/1.1" 200 72990
+Updating cache with response from "https://pypi.python.org/pypi/pip/json"
+Caching b/c date exists and max-age > 0
+allan@allan-VirtualBox:~/Downloads$ pip show-v
+ERROR: unknown command "show-v" - maybe you meant "show"
+allan@allan-VirtualBox:~/Downloads$ pip --v
+
+Usage:   
+  pip <command> [options]
+
+ambiguous option: --v (--verbose, --version?)
+allan@allan-VirtualBox:~/Downloads$ pip --version
+pip 9.0.1 from /usr/local/lib/python2.7/dist-packages (python 2.7)
+allan@allan-VirtualBox:~/Downloads$ pip -v
+
+Usage:   
+  pip <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be used up to 3 times (corresponding to WARNING, ERROR, and
+                              CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort.
+  --trusted-host <hostname>   Mark this host as trusted, even though it does not have valid or any HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file containing the private key and the certificate in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine whether a new version of pip is available for download. Implied
+                              with --no-index.
+allan@allan-VirtualBox:~/Downloads$ pip -V
+pip 9.0.1 from /usr/local/lib/python2.7/dist-packages (python 2.7)
+allan@allan-VirtualBox:~/Downloads$ pip show
+ERROR: Please provide a package name or names.
+allan@allan-VirtualBox:~/Downloads$ pip show -V
+ERROR: Please provide a package name or names.
+allan@allan-VirtualBox:~/Downloads$ pip
+
+Usage:   
+  pip <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be used up to 3 times (corresponding to WARNING, ERROR, and
+                              CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort.
+  --trusted-host <hostname>   Mark this host as trusted, even though it does not have valid or any HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file containing the private key and the certificate in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine whether a new version of pip is available for download. Implied
+                              with --no-index.
+allan@allan-VirtualBox:~/Downloads$ cd\
+> pip
+cdpip: command not found
+allan@allan-VirtualBox:~/Downloads$ cd/
+bash: cd/: No such file or directory
+allan@allan-VirtualBox:~/Downloads$ cd
+allan@allan-VirtualBox:~$ help
+GNU bash, version 4.3.46(1)-release (x86_64-pc-linux-gnu)
+These shell commands are defined internally.  Type `help' to see this list.
+Type `help name' to find out more about the function `name'.
+Use `info bash' to find out more about the shell in general.
+Use `man -k' or `info' to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ job_spec [&]                                                           history [-c] [-d offset] [n] or history -anrw [filename] or history>
+ (( expression ))                                                       if COMMANDS; then COMMANDS; [ elif COMMANDS; then COMMANDS; ]... [ >
+ . filename [arguments]                                                 jobs [-lnprs] [jobspec ...] or jobs -x command [args]
+ :                                                                      kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill >
+ [ arg... ]                                                             let arg [arg ...]
+ [[ expression ]]                                                       local [option] name[=value] ...
+ alias [-p] [name[=value] ... ]                                         logout [n]
+ bg [job_spec ...]                                                      mapfile [-n count] [-O origin] [-s count] [-t] [-u fd] [-C callback>
+ bind [-lpsvPSVX] [-m keymap] [-f filename] [-q name] [-u name] [-r k>  popd [-n] [+N | -N]
+ break [n]                                                              printf [-v var] format [arguments]
+ builtin [shell-builtin [arg ...]]                                      pushd [-n] [+N | -N | dir]
+ caller [expr]                                                          pwd [-LP]
+ case WORD in [PATTERN [| PATTERN]...) COMMANDS ;;]... esac             read [-ers] [-a array] [-d delim] [-i text] [-n nchars] [-N nchars]>
+ cd [-L|[-P [-e]] [-@]] [dir]                                           readarray [-n count] [-O origin] [-s count] [-t] [-u fd] [-C callba>
+ command [-pVv] command [arg ...]                                       readonly [-aAf] [name[=value] ...] or readonly -p
+ compgen [-abcdefgjksuv] [-o option]  [-A action] [-G globpat] [-W wo>  return [n]
+ complete [-abcdefgjksuv] [-pr] [-DE] [-o option] [-A action] [-G glo>  select NAME [in WORDS ... ;] do COMMANDS; done
+ compopt [-o|+o option] [-DE] [name ...]                                set [-abefhkmnptuvxBCHP] [-o option-name] [--] [arg ...]
+ continue [n]                                                           shift [n]
+ coproc [NAME] command [redirections]                                   shopt [-pqsu] [-o] [optname ...]
+ declare [-aAfFgilnrtux] [-p] [name[=value] ...]                        source filename [arguments]
+ dirs [-clpv] [+N] [-N]                                                 suspend [-f]
+ disown [-h] [-ar] [jobspec ...]                                        test [expr]
+ echo [-neE] [arg ...]                                                  time [-p] pipeline
+ enable [-a] [-dnps] [-f filename] [name ...]                           times
+ eval [arg ...]                                                         trap [-lp] [[arg] signal_spec ...]
+ exec [-cl] [-a name] [command [arguments ...]] [redirection ...]       true
+ exit [n]                                                               type [-afptP] name [name ...]
+ export [-fn] [name[=value] ...] or export -p                           typeset [-aAfFgilrtux] [-p] name[=value] ...
+ false                                                                  ulimit [-SHabcdefilmnpqrstuvxT] [limit]
+ fc [-e ename] [-lnr] [first] [last] or fc -s [pat=rep] [command]       umask [-p] [-S] [mode]
+ fg [job_spec]                                                          unalias [-a] name [name ...]
+ for NAME [in WORDS ... ] ; do COMMANDS; done                           unset [-f] [-v] [-n] [name ...]
+ for (( exp1; exp2; exp3 )); do COMMANDS; done                          until COMMANDS; do COMMANDS; done
+ function name { COMMANDS ; } or name () { COMMANDS ; }                 variables - Names and meanings of some shell variables
+ getopts optstring name [arg]                                           wait [-n] [id ...]
+ hash [-lr] [-p pathname] [-dt] [name ...]                              while COMMANDS; do COMMANDS; done
+ help [-dms] [pattern ...]                                              { COMMANDS ; }
+allan@allan-VirtualBox:~$ pip
+
+Usage:   
+  pip <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be used up to 3 times (corresponding to WARNING, ERROR, and
+                              CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort.
+  --trusted-host <hostname>   Mark this host as trusted, even though it does not have valid or any HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file containing the private key and the certificate in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine whether a new version of pip is available for download. Implied
+                              with --no-index.
+allan@allan-VirtualBox:~$ help
+GNU bash, version 4.3.46(1)-release (x86_64-pc-linux-gnu)
+These shell commands are defined internally.  Type `help' to see this list.
+Type `help name' to find out more about the function `name'.
+Use `info bash' to find out more about the shell in general.
+Use `man -k' or `info' to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ job_spec [&]                                                           history [-c] [-d offset] [n] or history -anrw [filename] or history>
+ (( expression ))                                                       if COMMANDS; then COMMANDS; [ elif COMMANDS; then COMMANDS; ]... [ >
+ . filename [arguments]                                                 jobs [-lnprs] [jobspec ...] or jobs -x command [args]
+ :                                                                      kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill >
+ [ arg... ]                                                             let arg [arg ...]
+ [[ expression ]]                                                       local [option] name[=value] ...
+ alias [-p] [name[=value] ... ]                                         logout [n]
+ bg [job_spec ...]                                                      mapfile [-n count] [-O origin] [-s count] [-t] [-u fd] [-C callback>
+ bind [-lpsvPSVX] [-m keymap] [-f filename] [-q name] [-u name] [-r k>  popd [-n] [+N | -N]
+ break [n]                                                              printf [-v var] format [arguments]
+ builtin [shell-builtin [arg ...]]                                      pushd [-n] [+N | -N | dir]
+ caller [expr]                                                          pwd [-LP]
+ case WORD in [PATTERN [| PATTERN]...) COMMANDS ;;]... esac             read [-ers] [-a array] [-d delim] [-i text] [-n nchars] [-N nchars]>
+ cd [-L|[-P [-e]] [-@]] [dir]                                           readarray [-n count] [-O origin] [-s count] [-t] [-u fd] [-C callba>
+ command [-pVv] command [arg ...]                                       readonly [-aAf] [name[=value] ...] or readonly -p
+ compgen [-abcdefgjksuv] [-o option]  [-A action] [-G globpat] [-W wo>  return [n]
+ complete [-abcdefgjksuv] [-pr] [-DE] [-o option] [-A action] [-G glo>  select NAME [in WORDS ... ;] do COMMANDS; done
+ compopt [-o|+o option] [-DE] [name ...]                                set [-abefhkmnptuvxBCHP] [-o option-name] [--] [arg ...]
+ continue [n]                                                           shift [n]
+ coproc [NAME] command [redirections]                                   shopt [-pqsu] [-o] [optname ...]
+ declare [-aAfFgilnrtux] [-p] [name[=value] ...]                        source filename [arguments]
+ dirs [-clpv] [+N] [-N]                                                 suspend [-f]
+ disown [-h] [-ar] [jobspec ...]                                        test [expr]
+ echo [-neE] [arg ...]                                                  time [-p] pipeline
+ enable [-a] [-dnps] [-f filename] [name ...]                           times
+ eval [arg ...]                                                         trap [-lp] [[arg] signal_spec ...]
+ exec [-cl] [-a name] [command [arguments ...]] [redirection ...]       true
+ exit [n]                                                               type [-afptP] name [name ...]
+ export [-fn] [name[=value] ...] or export -p                           typeset [-aAfFgilrtux] [-p] name[=value] ...
+ false                                                                  ulimit [-SHabcdefilmnpqrstuvxT] [limit]
+ fc [-e ename] [-lnr] [first] [last] or fc -s [pat=rep] [command]       umask [-p] [-S] [mode]
+ fg [job_spec]                                                          unalias [-a] name [name ...]
+ for NAME [in WORDS ... ] ; do COMMANDS; done                           unset [-f] [-v] [-n] [name ...]
+ for (( exp1; exp2; exp3 )); do COMMANDS; done                          until COMMANDS; do COMMANDS; done
+ function name { COMMANDS ; } or name () { COMMANDS ; }                 variables - Names and meanings of some shell variables
+ getopts optstring name [arg]                                           wait [-n] [id ...]
+ hash [-lr] [-p pathname] [-dt] [name ...]                              while COMMANDS; do COMMANDS; done
+ help [-dms] [pattern ...]                                              { COMMANDS ; }
+allan@allan-VirtualBox:~$ pip help
+
+Usage:   
+  pip <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be used up to 3 times (corresponding to WARNING, ERROR, and
+                              CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort.
+  --trusted-host <hostname>   Mark this host as trusted, even though it does not have valid or any HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file containing the private key and the certificate in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine whether a new version of pip is available for download. Implied
+                              with --no-index.
+allan@allan-VirtualBox:~$ sudo pip install virtualenwrapper
+[sudo] password for allan: 
+Sorry, try again.
+[sudo] password for allan: 
+The directory '/home/allan/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/allan/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting virtualenwrapper
+  Could not find a version that satisfies the requirement virtualenwrapper (from versions: )
+No matching distribution found for virtualenwrapper
+allan@allan-VirtualBox:~$ sudo pip install virtualenwrapper
+The directory '/home/allan/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/allan/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting virtualenwrapper
+  Could not find a version that satisfies the requirement virtualenwrapper (from versions: )
+No matching distribution found for virtualenwrapper
+allan@allan-VirtualBox:~$ sudo pip install virtualenvwrapper
+The directory '/home/allan/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/allan/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting virtualenvwrapper
+  Downloading virtualenvwrapper-4.7.2.tar.gz (90kB)
+    100% |████████████████████████████████| 92kB 36kB/s 
+Collecting virtualenv (from virtualenvwrapper)
+  Downloading virtualenv-15.1.0-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 16kB/s 
+Collecting virtualenv-clone (from virtualenvwrapper)
+  Downloading virtualenv-clone-0.2.6.tar.gz
+Collecting stevedore (from virtualenvwrapper)
+  Downloading stevedore-1.19.1-py2.py3-none-any.whl
+Collecting six>=1.9.0 (from stevedore->virtualenvwrapper)
+  Downloading six-1.10.0-py2.py3-none-any.whl
+Collecting pbr>=1.8 (from stevedore->virtualenvwrapper)
+  Downloading pbr-1.10.0-py2.py3-none-any.whl (96kB)
+    100% |████████████████████████████████| 102kB 15kB/s 
+Installing collected packages: virtualenv, virtualenv-clone, six, pbr, stevedore, virtualenvwrapper
+  Running setup.py install for virtualenv-clone ... done
+  Running setup.py install for virtualenvwrapper ... done
+Successfully installed pbr-1.10.0 six-1.10.0 stevedore-1.19.1 virtualenv-15.1.0 virtualenv-clone-0.2.6 virtualenvwrapper-4.7.2
+allan@allan-VirtualBox:~$ sudo apt-get install vim
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  vim-common vim-runtime vim-tiny
+Suggested packages:
+  ctags vim-doc vim-scripts vim-gnome-py2 | vim-gtk-py2 | vim-gtk3-py2 | vim-athena-py2 | vim-nox-py2 indent
+The following NEW packages will be installed:
+  vim vim-runtime
+The following packages will be upgraded:
+  vim-common vim-tiny
+2 upgraded, 2 newly installed, 0 to remove and 282 not upgraded.
+Need to get 6,199 kB/6,748 kB of archives.
+After this operation, 30.0 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ug.archive.ubuntu.com/ubuntu xenial-updates/main amd64 vim-runtime all 2:7.4.1689-3ubuntu1.2 [5,164 kB]
+Get:2 http://ug.archive.ubuntu.com/ubuntu xenial-updates/main amd64 vim amd64 2:7.4.1689-3ubuntu1.2 [1,036 kB]                               
+Fetched 6,199 kB in 2min 2s (50.8 kB/s)                                                                                                      
+(Reading database ... 173835 files and directories currently installed.)
+Preparing to unpack .../vim-tiny_2%3a7.4.1689-3ubuntu1.2_amd64.deb ...
+Unpacking vim-tiny (2:7.4.1689-3ubuntu1.2) over (2:7.4.1689-3ubuntu1.1) ...
+Preparing to unpack .../vim-common_2%3a7.4.1689-3ubuntu1.2_amd64.deb ...
+Unpacking vim-common (2:7.4.1689-3ubuntu1.2) over (2:7.4.1689-3ubuntu1.1) ...
+Selecting previously unselected package vim-runtime.
+Preparing to unpack .../vim-runtime_2%3a7.4.1689-3ubuntu1.2_all.deb ...
+Adding 'diversion of /usr/share/vim/vim74/doc/help.txt to /usr/share/vim/vim74/doc/help.txt.vim-tiny by vim-runtime'
+Adding 'diversion of /usr/share/vim/vim74/doc/tags to /usr/share/vim/vim74/doc/tags.vim-tiny by vim-runtime'
+Unpacking vim-runtime (2:7.4.1689-3ubuntu1.2) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../vim_2%3a7.4.1689-3ubuntu1.2_amd64.deb ...
+Unpacking vim (2:7.4.1689-3ubuntu1.2) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for gnome-menus (3.13.3-6ubuntu3.1) ...
+Processing triggers for desktop-file-utils (0.22-1ubuntu5) ...
+Processing triggers for bamfdaemon (0.5.3~bzr0+16.04.20160701-0ubuntu1) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for mime-support (3.59ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.15-0ubuntu1) ...
+Setting up vim-common (2:7.4.1689-3ubuntu1.2) ...
+Setting up vim-tiny (2:7.4.1689-3ubuntu1.2) ...
+Setting up vim-runtime (2:7.4.1689-3ubuntu1.2) ...
+Setting up vim (2:7.4.1689-3ubuntu1.2) ...
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdiff) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in auto mode
+allan@allan-VirtualBox:~$ gedit .bashrc
+allan@allan-VirtualBox:~$ source ~/.bashrc
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/premkproject
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/postmkproject
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/initialize
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/premkvirtualenv
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/postmkvirtualenv
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/prermvirtualenv
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/postrmvirtualenv
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/predeactivate
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/postdeactivate
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/preactivate
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/postactivate
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/get_env_details
+allan@allan-VirtualBox:~$ 
+
+
+
+
+
+
+allan@allan-VirtualBox:~$ cd Downloads
+allan@allan-VirtualBox:~/Downloads$ cd tmcg_assignment_one
+allan@allan-VirtualBox:~/Downloads/tmcg_assignment_one$ main.py
+main.py: command not found
+allan@allan-VirtualBox:~/Downloads/tmcg_assignment_one$ open main.py
+Couldn't get a file descriptor referring to the console
+allan@allan-VirtualBox:~/Downloads/tmcg_assignment_one$ run main.py
+No command 'run' found, did you mean:
+ Command 'grun' from package 'grun' (universe)
+ Command 'rup' from package 'rstat-client' (universe)
+ Command 'runq' from package 'exim4-daemon-heavy' (main)
+ Command 'runq' from package 'exim4-daemon-light' (main)
+ Command 'runq' from package 'sendmail-bin' (universe)
+ Command 'zrun' from package 'moreutils' (universe)
+ Command 'srun' from package 'slurm-client' (universe)
+ Command 'rn' from package 'trn' (multiverse)
+ Command 'rn' from package 'trn4' (multiverse)
+ Command 'qrun' from package 'torque-client' (universe)
+ Command 'qrun' from package 'torque-client-x11' (universe)
+ Command 'runc' from package 'runc' (universe)
+run: command not found
+allan@allan-VirtualBox:~/Downloads/tmcg_assignment_one$ grun main.py
+
+The program 'grun' is currently not installed. You can install it by typing:
+sudo apt install grun
+allan@allan-VirtualBox:~/Downloads/tmcg_assignment_one$ 
+allan@allan-VirtualBox:~/Downloads/tmcg_assignment_one$ cd
+allan@allan-VirtualBox:~$ cd Documents
+allan@allan-VirtualBox:~/Documents$ mkdir tcmg_django_intro
+allan@allan-VirtualBox:~/Documents$ cd tcmg_django_intro
+allan@allan-VirtualBox:~/Documents/tcmg_django_intro$ cd
+allan@allan-VirtualBox:~$ cd Documents
+allan@allan-VirtualBox:~/Documents$ mkdir tmcg_django_intro
+allan@allan-VirtualBox:~/Documents$ cd tmcg_django_intro
+allan@allan-VirtualBox:~/Documents/tmcg_django_intro$ mkvirtualenv intro1
+New python executable in /home/allan/.virtualenvs/intro1/bin/python
+Installing setuptools, pip, wheel...done.
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/intro1/bin/predeactivate
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/intro1/bin/postdeactivate
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/intro1/bin/preactivate
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/intro1/bin/postactivate
+virtualenvwrapper.user_scripts creating /home/allan/.virtualenvs/intro1/bin/get_env_details
+(intro1) allan@allan-VirtualBox:~/Documents/tmcg_django_intro$ pip install django
+Collecting django
+  Downloading Django-1.10.5-py2.py3-none-any.whl (6.8MB)
+    100% |████████████████████████████████| 6.8MB 11kB/s 
+Installing collected packages: django
+Successfully installed django-1.10.5
+(intro1) allan@allan-VirtualBox:~/Documents/tmcg_django_intro$ django-admin startproject intro1
+(intro1) allan@allan-VirtualBox:~/Documents/tmcg_django_intro$ cd intro1
+(intro1) allan@allan-VirtualBox:~/Documents/tmcg_django_intro/intro1$ setvirtualenvproject
+Setting project for intro1 to /home/allan/Documents/tmcg_django_intro/intro1
+(intro1) allan@allan-VirtualBox:~/Documents/tmcg_django_intro/intro1$ ^C
+(intro1) allan@allan-VirtualBox:~/Documents/tmcg_django_intro/intro1$ 
+(intro1) allan@allan-VirtualBox:~/Documents/tmcg_django_intro/intro1$ sudo apt-get install virtualbox-guest-additions-iso
+[sudo] password for allan: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  dkms libgsoap8 libqt4-opengl libsdl1.2debian libvncserver1 virtualbox virtualbox-dkms virtualbox-qt
+Suggested packages:
+  vde2
+The following NEW packages will be installed:
+  dkms libgsoap8 libqt4-opengl libsdl1.2debian libvncserver1 virtualbox virtualbox-dkms virtualbox-guest-additions-iso virtualbox-qt
+0 upgraded, 9 newly installed, 0 to remove and 282 not upgraded.
+Need to get 62.0 MB of archives.
+After this operation, 156 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ug.archive.ubuntu.com/ubuntu xenial-updates/main amd64 dkms all 2.2.0.3-2ubuntu11.3 [66.1 kB]
+Get:2 http://ug.archive.ubuntu.com/ubuntu xenial/universe amd64 libgsoap8 amd64 2.8.28-1 [216 kB]                                            
+Get:3 http://ug.archive.ubuntu.com/ubuntu xenial/main amd64 libqt4-opengl amd64 4:4.8.7+dfsg-5ubuntu2 [301 kB]                               
+Get:4 http://ug.archive.ubuntu.com/ubuntu xenial/main amd64 libsdl1.2debian amd64 1.2.15+dfsg1-3 [168 kB]                                    
+Get:5 http://ug.archive.ubuntu.com/ubuntu xenial/main amd64 libvncserver1 amd64 0.9.10+dfsg-3build1 [121 kB]                                 
+Get:6 http://ug.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 virtualbox-dkms all 5.0.24-dfsg-0ubuntu1.16.04.1 [617 kB]          
+Get:7 http://ug.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 virtualbox amd64 5.0.24-dfsg-0ubuntu1.16.04.1 [14.4 MB]            
+Get:8 http://ug.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 virtualbox-qt amd64 5.0.24-dfsg-0ubuntu1.16.04.1 [7,170 kB]        
+Get:9 http://ug.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 virtualbox-guest-additions-iso all 5.0.24-0ubuntu1.16.04.1 [39.0 MB]
+Fetched 62.0 MB in 15min 58s (64.7 kB/s)                                                                                                     
+Selecting previously unselected package dkms.
+(Reading database ... 175544 files and directories currently installed.)
+Preparing to unpack .../dkms_2.2.0.3-2ubuntu11.3_all.deb ...
+Unpacking dkms (2.2.0.3-2ubuntu11.3) ...
+Selecting previously unselected package libgsoap8:amd64.
+Preparing to unpack .../libgsoap8_2.8.28-1_amd64.deb ...
+Unpacking libgsoap8:amd64 (2.8.28-1) ...
+Selecting previously unselected package libqt4-opengl:amd64.
+Preparing to unpack .../libqt4-opengl_4%3a4.8.7+dfsg-5ubuntu2_amd64.deb ...
+Unpacking libqt4-opengl:amd64 (4:4.8.7+dfsg-5ubuntu2) ...
+Selecting previously unselected package libsdl1.2debian:amd64.
+Preparing to unpack .../libsdl1.2debian_1.2.15+dfsg1-3_amd64.deb ...
+Unpacking libsdl1.2debian:amd64 (1.2.15+dfsg1-3) ...
+Selecting previously unselected package libvncserver1:amd64.
+Preparing to unpack .../libvncserver1_0.9.10+dfsg-3build1_amd64.deb ...
+Unpacking libvncserver1:amd64 (0.9.10+dfsg-3build1) ...
+Selecting previously unselected package virtualbox-dkms.
+Preparing to unpack .../virtualbox-dkms_5.0.24-dfsg-0ubuntu1.16.04.1_all.deb ...
+Unpacking virtualbox-dkms (5.0.24-dfsg-0ubuntu1.16.04.1) ...
+Selecting previously unselected package virtualbox.
+Preparing to unpack .../virtualbox_5.0.24-dfsg-0ubuntu1.16.04.1_amd64.deb ...
+Unpacking virtualbox (5.0.24-dfsg-0ubuntu1.16.04.1) ...
+Selecting previously unselected package virtualbox-qt.
+Preparing to unpack .../virtualbox-qt_5.0.24-dfsg-0ubuntu1.16.04.1_amd64.deb ...
+Unpacking virtualbox-qt (5.0.24-dfsg-0ubuntu1.16.04.1) ...
+Selecting previously unselected package virtualbox-guest-additions-iso.
+Preparing to unpack .../virtualbox-guest-additions-iso_5.0.24-0ubuntu1.16.04.1_all.deb ...
+Unpacking virtualbox-guest-additions-iso (5.0.24-0ubuntu1.16.04.1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu3) ...
+Processing triggers for systemd (229-4ubuntu7) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for gnome-menus (3.13.3-6ubuntu3.1) ...
+Processing triggers for desktop-file-utils (0.22-1ubuntu5) ...
+Processing triggers for bamfdaemon (0.5.3~bzr0+16.04.20160701-0ubuntu1) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for mime-support (3.59ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.15-0ubuntu1) ...
+Processing triggers for shared-mime-info (1.5-2ubuntu0.1) ...
+Setting up dkms (2.2.0.3-2ubuntu11.3) ...
+Setting up libgsoap8:amd64 (2.8.28-1) ...
+Setting up libqt4-opengl:amd64 (4:4.8.7+dfsg-5ubuntu2) ...
+Setting up libsdl1.2debian:amd64 (1.2.15+dfsg1-3) ...
+Setting up libvncserver1:amd64 (0.9.10+dfsg-3build1) ...
+Setting up virtualbox-dkms (5.0.24-dfsg-0ubuntu1.16.04.1) ...
+Loading new virtualbox-5.0.24 DKMS files...
+First Installation: checking all kernels...
+Building only for 4.4.0-31-generic
+Building initial module for 4.4.0-31-generic
+Done.
+
+vboxdrv:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.4.0-31-generic/updates/dkms/
+
+vboxnetadp.ko:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.4.0-31-generic/updates/dkms/
+
+vboxnetflt.ko:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.4.0-31-generic/updates/dkms/
+
+vboxpci.ko:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.4.0-31-generic/updates/dkms/
+
+depmod........
+
+DKMS: install completed.
+Setting up virtualbox (5.0.24-dfsg-0ubuntu1.16.04.1) ...
+vboxweb.service is a disabled or a static unit, not starting it.
+^[[B^[[B^[[B^[[BSetting up virtualbox-qt (5.0.24-dfsg-0ubuntu1.16.04.1) ...
+Setting up virtualbox-guest-additions-iso (5.0.24-0ubuntu1.16.04.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu3) ...
+Processing triggers for systemd (229-4ubuntu7) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+(intro1) allan@allan-VirtualBox:~/Documents/tmcg_django_intro/intro1$ 
+
+
+
